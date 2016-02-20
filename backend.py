@@ -3,9 +3,19 @@ from firebase import firebase
 from uber_rides.session import Session
 from uber_rides.client import UberRidesClient
 from uber_rides.auth import AuthorizationCodeGrant
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+if __name__ == "__main__":
+    app.run()
 
 #UberAuth
-session = Session(server_token=xPw_C1UY7WlYZKO9B3-Y92hI77sJkHfq3q2pcvq6)
+session = Session(server_token="xPw_C1UY7WlYZKO9B3-Y92hI77sJkHfq3q2pcvq6")
 #UberUserAuth
 auth_flow = AuthorizationCodeGrant(
     YOUR_CLIENT_ID,
