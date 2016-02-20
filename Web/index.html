@@ -3,11 +3,22 @@
 <head>
 <meta charset="utf-8">
 <title>Hello World from HTML by Koding</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <link rel="stylesheet" href="/dist/css/bootstrap.css">
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="myDate.js"></script>
+
+<style>
+      html, body {
+        height: 50%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
 
 <!--[if IE]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,26 +26,80 @@
 </head>
 
 <body class="html">
+</div>
+    <div id="map"></div>
+
 <div id="container">
   <div id="main" role="main" class="hellobox">
     <h1>Uber Stuff</h1>
-        
-     </div>
+      <p>
+      <script type="text/javascript">
+          document.write(pos.lat);
+          document.write(pos.lng);
+      </script>
+          </p>
+      <script>
+          $.ajax({
+        type: "POST",
+        url: "~/backend.py",
+        data: { "latitude": pos.lat, "longitude": pos.lng}
+        }).done(function( o ) {
+        console.log("success")
+        });
+      </script>
+
   <nav>
     <ul>
       <li class="active"><a href="index.html">HTML</a></li>
+        <button type="button" class="btn btn-primary">Button1</button>
     </ul>
   </nav>
   <footer>
-    <p id="social"><a id="twitter" href="https://twitter.com/koding" target=_blank>Twitter</a><a id="facebook" href="https://facebook.com/koding" target=_blank>Facebook</a></p>
+    <p id="social"><a id="twitter" href="https://twitter.com/koding" target=_blank>Twitter</a> <a id="facebook" href="https://facebook.com/koding" target=_blank>Facebook</a></p>
   </footer>
 </div>
-
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-        <br />
-        <small>
-            <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-        </small>
-        </iframe>
 </body>
+
+<script>
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 6
+  });
+  var infoWindow = new google.maps.InfoWindow({map: map});
+
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+        function displayMyVar(targetElementId) {
+                document.getElementById(targetElementId).innerHTML = pos.lat;
+            }
+
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      map.setCenter(pos);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
+}
+       </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ0oEIUqBrChwFAk8q4BDsTWltlzM3TDA&signed_in=true&callback=initMap"
+        async defer>
+    </script>
+
 </html>
