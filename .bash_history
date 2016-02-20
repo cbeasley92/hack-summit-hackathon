@@ -67,3 +67,56 @@ vi id_rsa.pub
 clear
 ssh cbeasley92@ucksa4d14313.cbeasley92.koding.io
 exit
+cd /home/kkiple93/Web
+python hello.py
+python hello.py
+python hello.py
+sudo apt-get install pip
+sudo apt-get install python-pip
+pip
+cd/home
+cd /home
+ssh-keygen
+sudo ssh-keygen
+sudo ssh-keygen
+su
+su
+su
+su K72k4y22l8@
+su
+su K72k4y22l8
+su
+su root
+ls -la
+sudo cd /
+cat attempt500.pub
+ssh cbeasley92@ucksa4d14313.cbeasley92.koding.io
+sudo apt-get install python-pip
+E: Failed to fetch http://us-east-1.ec2.archive.ubuntu.com/ubuntu/pool/main/g/gcc-4.8/libstdc++-4.8-dev_4.8.4-2ubuntu1~14.04_amd64.deb  404  Not Found [IP: 54.144.108.75 80]
+ 
+w
+w
+w
+w
+w
+w
+w
+w
+w
+w
+w
+w
+w
+w
+w
+w
+w
+w
+w
+w
+w
+w
+w
+w
+w
+ssh cbeasley92@ucksa4d14313.cbeasley92.koding.io
