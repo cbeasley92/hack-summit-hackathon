@@ -98,6 +98,12 @@ hr {
      -moz-box-sizing: content-box;
           box-sizing: content-box;
 }
+hr.hrGreen{
+    color:#00b300;
+    background-color:#00b300;
+    
+}
+
 pre {
   overflow: auto;
 }
@@ -1373,8 +1379,7 @@ a.text-danger:focus {
   color: #843534;
 }
 .bg-primary {
-  color: #fff;
-  background-color: #337ab7;
+  color: white;
 }
 a.bg-primary:hover,
 a.bg-primary:focus {
@@ -1407,6 +1412,10 @@ a.bg-warning:focus {
 a.bg-danger:hover,
 a.bg-danger:focus {
   background-color: #e4b9b9;
+}
+.bg-infoAbout {
+  color: black;
+  background-color: #3f3f3f;
 }
 .page-header {
   padding-bottom: 9px;
