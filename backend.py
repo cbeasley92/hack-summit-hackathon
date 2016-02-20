@@ -44,6 +44,7 @@ def uberUserAuth(YOUR_CLIENT_ID,YOUR_PERMISSION_SCOPES,YOUR_CLIENT_SECRET, YOUR_
 firebase = firebase.FirebaseApplication('https://uberconcierge.firebaseIO.com', None)
 
 #getAvailableProductsFromLocation
+@app.route("/get_products")
 def getAvailableProducts():
     client = UberRidesClient(session)
     locationLat = getLocationLat()
