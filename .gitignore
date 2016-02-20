@@ -1,0 +1,8 @@
+.bash_logout
+.bashrc
+.lesshst
+.npm/
+.pip/
+.profile
+Backup/
+node_modules/
