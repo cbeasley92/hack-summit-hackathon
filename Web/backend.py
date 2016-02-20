@@ -3,10 +3,7 @@ import os
 
 from firebase import firebase
 
-from uber_rides.session import Session
-from uber_rides.client import UberRidesClient
-from uber_rides.auth import AuthorizationCodeGrant
-from flask import Flask, render_template, request, json
+from flask import Flask, request, json
 
 app = Flask(__name__, static_folder='static', static_url_path='')
 app.requests_session = requests.Session()
@@ -14,21 +11,6 @@ app.secret_key = os.urandom(24)
 
 # FireBaseAuth
 firebase = firebase.FirebaseApplication('https://uberconcierge.firebaseIO.com', None)
-
-
-@app.route("/hello")
-def hello():
-    return "Hello World!"
-    print 'Hi Kyle'
-
-'''
-@app.route('/hello')
-def api_hello():
-    if 'name' in request.args:
-        return 'Hello ' + request.args['name']
-    else:
-        return 'Hello Peeps'
-'''
 
 
 @app.route("/coordinates", methods=['POST'])
