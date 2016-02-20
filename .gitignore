@@ -1,0 +1,9 @@
+.bash_logout
+.bashrc
+.lesshst
+.npm/
+.pip/
+.profile
+.viminfo
+Backup/
+node_modules/
