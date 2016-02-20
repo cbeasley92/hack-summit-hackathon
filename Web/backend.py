@@ -12,28 +12,39 @@ def hello():
     return "Hello World!"
     print 'Hi Kyle'
 
+@app.route('/hello')
+def api_hello():
+    if 'name' in request.args:
+        return 'Hello ' + request.args['name']
+    else:
+        return 'Hello Peeps'
+
 if __name__ == "__main__":
     app.run()
 
 #UberAuth
 session = Session(server_token="xPw_C1UY7WlYZKO9B3-Y92hI77sJkHfq3q2pcvq6")
-#UberUserAuth
-auth_flow = AuthorizationCodeGrant(
-    YOUR_CLIENT_ID,
-    YOUR_PERMISSION_SCOPES,
-    YOUR_CLIENT_SECRET,
-    YOUR_REDIRECT_URL,
-)
-auth_url = auth_flow.get_authorization_url()
-session = auth_flow.get_session(redirect_url)
-client = UberRidesClient(session)
-credentials = session.oauth2credential #save credentials in firebase datastore later
 
+@app.route("/authorize")
+#UberUserAuth
+def uberUserAuth(YOUR_CLIENT_ID,YOUR_PERMISSION_SCOPES,YOUR_CLIENT_SECRET, YOUR_REDIRECT_URL):
+    auth_flow = AuthorizationCodeGrant(
+        YOUR_CLIENT_ID,
+        YOUR_PERMISSION_SCOPES,
+        YOUR_CLIENT_SECRET,
+        YOUR_REDIRECT_URL,
+    )
+    auth_url = auth_flow.get_authorization_url()
+    session = auth_flow.get_session(redirect_url)
+    client = UberRidesClient(session)
+    credentials = session.oauth2credential #save credentials in firebase datastore later
+    result = firebase.post('/users', credentials, {'print': 'pretty'}, {'X_FANCY_HEADER': 'VERY FANCY'}) #take a look at this line later
 
 #FireBaseAuth
 firebase = firebase.FirebaseApplication('https://uberconcierge.firebaseIO.com', None)
 
 #getAvailableProductsFromLocation
+@app.route("/get_products")
 def getAvailableProducts():
     client = UberRidesClient(session)
     locationLat = getLocationLat()

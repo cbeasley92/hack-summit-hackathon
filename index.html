@@ -13,6 +13,12 @@
 <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 <script>
     var myDataRef = new Firebase('https://uberconcierge.firebaseio.com/');
+    $.ajax({
+       type: "GET",
+       url: "~/backend.py"
+    }).done(function( o ) {
+      // do something
+    });
 </script>
 <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 </head>
