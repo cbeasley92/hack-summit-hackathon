@@ -12,6 +12,13 @@ def hello():
     return "Hello World!"
     print 'Hi Kyle'
 
+@app.route('/hello')
+def api_hello():
+    if 'name' in request.args:
+        return 'Hello ' + request.args['name']
+    else:
+        return 'Hello Peeps'
+
 if __name__ == "__main__":
     app.run()
 
