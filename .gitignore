@@ -4,5 +4,6 @@
 .npm/
 .pip/
 .profile
+.viminfo
 Backup/
 node_modules/
