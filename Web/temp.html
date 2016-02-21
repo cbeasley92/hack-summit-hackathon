@@ -316,19 +316,32 @@
                     anchor: new google.maps.Point(17, 34),
                     scaledSize: new google.maps.Size(25, 25)
                 };
+                
+                var contentString = '<div id="content">'+'<div id="siteNotice">'+
+                '<button>Order Ride Here</button>'+
+                '</div>'+'</div>';
 
-                // Create a marker for each place.
+                var infowindow = new google.maps.InfoWindow({
+                content: contentString
+                });
+
                 markers.push(new google.maps.Marker({
                     map: map,
                     icon: icon,
                     title: place.name,
                     position: place.geometry.location
                 }));
+                console.log(markers);
+                for(i=0;i<markers.length;i++){
+                    markers[i].addListener('click', function() {
+                        infowindow.open(map, markers[i]);
+                    });
+                }
 
                 if (place.geometry.viewport) {
                     // Only geocodes have viewport.
                     bounds.union(place.geometry.viewport);
-                } else {
+                }else {
                     bounds.extend(place.geometry.location);
                 }
             });
