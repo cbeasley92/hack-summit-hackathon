@@ -41,9 +41,6 @@
 </head>
 
 <body>
-
-    
-
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
@@ -231,7 +228,20 @@
                 'Error: The Geolocation service failed.' :
                 'Error: Your browser doesn\'t support geolocation.');
     }
+    //method for searchBox autocomplete
+    /*
+    var defaultBounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(-33.8902, 151.1759),
+        new google.maps.LatLng(-33.8474, 151.2631));
+
+        var input = document.getElementById('searchTextField');
+
+         var searchBox = new google.maps.places.SearchBox(input, {
+            bounds: defaultBounds
+    });
+    */
     </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ0oEIUqBrChwFAk8q4BDsTWltlzM3TDA&libraries=places"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ0oEIUqBrChwFAk8q4BDsTWltlzM3TDA&signed_in=true&callback=initMap" async defer></script>
     <script>
         function uberLogin(){
