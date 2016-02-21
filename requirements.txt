@@ -3,4 +3,3 @@ flask_sslify==0.1.4
 rauth==0.7.0
 requests==2.3.0
 python-firebase==1.2
-pyOpenSSL==0.15.1

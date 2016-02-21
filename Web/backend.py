@@ -43,7 +43,7 @@ def get_coordinates():
 
 @app.route("/submit", methods=['GET'])
 def get_access_code():
-    auth_code= request.args.get('code')
+    auth_code = request.args.get('code')
     print 'ACCESS_CODE: %s' % auth_code
 
     redirect_url = '%s?code=%s' % (REDIRECT_URI, auth_code)
