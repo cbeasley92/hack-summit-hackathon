@@ -47,7 +47,10 @@
             <h1 style="color:white;">Uber Extra</h1>
             <a class="btn btn-light btn-lg" onClick="uberLogin()">Login</a>
             <br><br><br><br><br><br><br><br><br><br><br>
-            <div id='searchTextField'></div>
+            <div id='searchTextField'>
+                <input type="text" id="searchTextField" name="StreetAddress" placeholder="Enter a location" autocomplete="off"></input>
+                <button type="submit" id="frmGetStartedSubmit">Go</button>
+            </div>
             <p style="color:white;">
                 Current Latitude & Longitude: <span id="lat"></span> , <span id="lng"></span>
             </p>
