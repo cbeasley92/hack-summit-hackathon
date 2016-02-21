@@ -9,7 +9,7 @@ from flask_sslify import SSLify
 from rauth import OAuth2Service
 import requests
 
-app = Flask(__name__, static_folder='static', static_url_path='')
+app = Flask(__name__, static_folder='static', static_url_path='http://ucksa4d14313.cbeasley92.koding.io')
 app.requests_session = requests.Session()
 app.secret_key = os.urandom(24)
 
