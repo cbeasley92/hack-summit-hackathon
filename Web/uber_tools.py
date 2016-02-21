@@ -1,48 +1,34 @@
-import requests
-
-from uber_rides.session import Session
-from uber_rides.client import UberRidesClient
-from uber_rides.auth import AuthorizationCodeGrant
-
-# Toolbox for Uber API calls
-# Author: Clinton
-
-# Uber API Constants
-CLIENT_ID = 'HVXgAbDzXyvreW-pctRCHtrvXbYieGD5'
-CLIENT_SECRET = '7unYqx257lkRh7Xhbbb-1nlEDTyGKTukEhq_7Cik'
-SERVER_TOKEN = 'xPw_C1UY7WlYZKO9B3-Y92hI77sJkHfq3q2pcvq6'
-REDIRECT_URL = 'localhost'
-
-
 from __future__ import absolute_import
 
 import json
 import os
 from urlparse import urlparse
 
-# from flask import Flask, render_template, request, redirect, session
-# from flask_sslify import SSLify
+from flask import Flask, render_template, request, redirect, session
+from flask_sslify import SSLify
 from rauth import OAuth2Service
 import requests
 
-'''
 app = Flask(__name__, static_folder='static', static_url_path='')
 app.requests_session = requests.Session()
 app.secret_key = os.urandom(24)
 
 sslify = SSLify(app)
-'''
+
+CLIENT_ID = 'HVXgAbDzXyvreW-pctRCHtrvXbYieGD5'
+CLIENT_SECRET = '7unYqx257lkRh7Xhbbb-1nlEDTyGKTukEhq_7Cik'
+SERVER_TOKEN = 'xPw_C1UY7WlYZKO9B3-Y92hI77sJkHfq3q2pcvq6'
 
 
-with open('config.json') as f:
+with open('uber_config.json') as f:
     config = json.load(f)
 
 
 def generate_oauth_service():
     """Prepare the OAuth2Service that is used to make requests later."""
     return OAuth2Service(
-        client_id=os.environ.get('UBER_CLIENT_ID'),
-        client_secret=os.environ.get('UBER_CLIENT_SECRET'),
+        client_id=CLIENT_ID,
+        client_secret=CLIENT_SECRET,
         name=config.get('name'),
         authorize_url=config.get('authorize_url'),
         access_token_url=config.get('access_token_url'),
@@ -94,23 +80,15 @@ def submit():
     response = app.requests_session.post(
         config.get('access_token_url'),
         auth=(
-            os.environ.get('UBER_CLIENT_ID'),
-            os.environ.get('UBER_CLIENT_SECRET')
+            CLIENT_ID,
+            CLIENT_SECRET
         ),
         data=params,
     )
     session['access_token'] = response.json().get('access_token')
 
-    return render_template(
-        'success.html',
-        token=response.json().get('access_token')
-    )
-
-
-@app.route('/demo', methods=['GET'])
-def demo():
-    """Demo.html is a template that calls the other routes in this example."""
-    return render_template('demo.html', token=session.get('access_token'))
+    # print response.json().get('access_token')
+    return response.json().get('access_token')
 
 
 @app.route('/products', methods=['GET'])
@@ -133,11 +111,8 @@ def products():
 
     if response.status_code != 200:
         return 'There was an error', response.status_code
-    return render_template(
-        'results.html',
-        endpoint='products',
-        data=response.text,
-    )
+
+    return response.text
 
 
 @app.route('/time', methods=['GET'])
@@ -160,11 +135,8 @@ def time():
 
     if response.status_code != 200:
         return 'There was an error', response.status_code
-    return render_template(
-        'results.html',
-        endpoint='time',
-        data=response.text,
-    )
+
+    return response.text
 
 
 @app.route('/price', methods=['GET'])
@@ -189,11 +161,8 @@ def price():
 
     if response.status_code != 200:
         return 'There was an error', response.status_code
-    return render_template(
-        'results.html',
-        endpoint='price',
-        data=response.text,
-    )
+
+    return response.text
 
 
 @app.route('/history', methods=['GET'])
@@ -213,11 +182,8 @@ def history():
 
     if response.status_code != 200:
         return 'There was an error', response.status_code
-    return render_template(
-        'results.html',
-        endpoint='history',
-        data=response.text,
-    )
+
+    return response.text
 
 
 @app.route('/me', methods=['GET'])
@@ -231,11 +197,8 @@ def me():
 
     if response.status_code != 200:
         return 'There was an error', response.status_code
-    return render_template(
-        'results.html',
-        endpoint='me',
-        data=response.text,
-    )
+
+    return response.text
 
 
 def get_redirect_uri(request):
