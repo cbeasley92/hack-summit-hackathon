@@ -212,4 +212,4 @@ def get_redirect_uri(request):
 
 if __name__ == '__main__':
     app.debug = os.environ.get('FLASK_DEBUG', True)
-    app.run(host='https://169.45.234.220', port=7000)
+    app.run(host='169.45.234.220', port=7000)
