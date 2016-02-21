@@ -70,6 +70,8 @@ def signup():
         'scopes': ','.join(config.get('scopes')),
     }
     url = generate_oauth_service().get_authorize_url(**params)
+
+    print 'Redirecting to Uber'
     return redirect(url)
 
 
@@ -95,7 +97,7 @@ def submit():
     )
     session['access_token'] = response.json().get('access_token')
 
-    # print response.json().get('access_token')
+    print response.json().get('access_token')
     return response.json().get('access_token')
 
 
