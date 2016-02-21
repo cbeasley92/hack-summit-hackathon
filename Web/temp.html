@@ -331,7 +331,9 @@
 
             markers.forEach(function (marker) {
                 var contentString = '<div id="content">' + '<br id="siteNotice">' +
-                        '<strong>' + marker.title + '</strong>' +
+                        '<strong>' + marker.getTitle() + '</strong>' +
+                        '</br>' + '</br>' +
+                        'Latitude & Longitude: ' + marker.getPosition().lat() + ' \| ' + marker.getPosition().lng() +
                         '</br>' + '</br>' +
                         '<button>Order Ride Here</button>' +
                         '</div>' + '</div>';
