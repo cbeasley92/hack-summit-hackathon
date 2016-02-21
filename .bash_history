@@ -120,3 +120,93 @@ w
 w
 w
 ssh cbeasley92@ucksa4d14313.cbeasley92.koding.io
+git remote
+git remote add origin https://github.com/cbeasley92/hack-summit-hackathon.git
+git pull origen master
+git remote add origin https://github.com/cbeasley92/hack-summit-hackathon.git
+git remote add originFork https://github.com/kkiple93/hack-summit-hackathon.git
+git commit -m
+git commit -m '
+exit
+
+exit
+git commit -m 'Fork Initialization'
+w
+git add .
+git commit -m 'Fork Initialization'
+git push origen forkMaster
+git remote -v
+git remote originFork push
+git push originFork master
+git push originFork master
+git pull origin master
+git push originFork master
+git pull origen master
+git pull origenFork master
+git -v
+git remote -v
+git pull origin master
+git pull origin templatetest
+clear
+git pull origin templatetest
+git branch
+git branch templatetest
+git branch 
+git checkout templatetest
+git pull origin templatetest
+git pull origin templatetest
+git pull origin templatetest
+git push originFork templatetest
+git status
+git branch
+git add .
+pwd
+ls
+ls -l
+git remote -v
+git push originFork
+git pull origenFork master
+git pull originFork master
+git pull originFork
+git pull originFork templatetest
+git commit -m "ver2"
+git push originFork templatetest
+git status
+get add .
+git add .
+git add . -a
+git add . -A
+git status
+git commit -m "v3"
+git push https://github.com/kkiple93/hack-summit-hackathon.git
+git push originFork templatetest
+git commit -m 'v4'
+git add -A
+git commit -m 'v4'
+git push originFork templatetest
+git checkout templatetest
+git pull https://github.com/kkiple93/hack-summit-hackathon.git templatetest
+git checkout templatetest
+git merge --no-ff kkiple93-templatetest
+git push origin tempaltetest
+git push originFork tempaltetest
+git push originFork templatetest
+git commit -m 'v5'
+git commit -A
+git add -A
+git commit -m 'v5'
+git push originFork templatetest
+git push originFork templatetest
+git commit
+git status
+git status
+git push originFork templatetest
+git status
+git push originFork templatetest
+clear
+git commit
+git add -A
+git commit
+git commit -m "v6"
+git push originFork templatetest
+git commit
