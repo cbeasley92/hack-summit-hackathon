@@ -371,6 +371,44 @@
             console.log("response");
         });
     }
+
+    function uberDistance(){
+        var startLat = document.getElementById("lat").innerHTML;
+        var startLong = document.getElementById("lng").innerHTML;
+        var endLat = this.position.lat();
+        var endLong = this.position.long();
+        console.log(endPosition)
+        console.log(startLat + ',' + startLong);
+        /*$.ajax({
+            type: "GET",
+            url: "https://login.uber.com/oauth/v2/authorize?client_id=" + clientId + "&response_type=" + responseType,
+            dataType: "jsonp",
+            crossDomain: true
+        }).done(function (response) {
+            console.log("response");
+        });*/
+    }
+
+    function getUberProducts(){
+        var startLat = document.getElementById("lat").innerHTML;
+        var startLong = document.getElementById("lng").innerHTML;
+        console.log(startLat + ',' + startLong);
+    }
+
+    function uberLogin() {
+        var clientId = "HVXgAbDzXyvreW-pctRCHtrvXbYieGD5";
+        var redirect = "http://localhost:7000/submit";
+        var responseType = "text";
+
+        $.ajax({
+            type: "GET",
+            url: "https://login.uber.com/oauth/v2/authorize?client_id=" + clientId + "&response_type=" + responseType,
+            dataType: "jsonp",
+            crossDomain: true
+        }).done(function (response) {
+            console.log("response");
+        });
+    }
 </script>
 
 </body>
