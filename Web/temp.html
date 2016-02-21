@@ -18,7 +18,7 @@
     <link href="css/stylish-portfolio.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-
+    
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <script src="test.js"></script>
@@ -29,15 +29,14 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-        html,
-        body {
-            height: 90%;
-            margin: 0;
-            padding: 0;
-        }
-        #map {
-            height: 100%;
-        }
+      html, body {
+        height: 90%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
     </style>
 </head>
 
@@ -47,35 +46,25 @@
         <div class="text-vertical-center">
             <h1 style="color:white;">Uber Extra</h1>
             <a class="btn btn-light btn-lg" onClick="uberLogin()">Login</a>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+            <br><br><br><br><br><br><br><br><br><br><br>
             <div id='searchTextField'></div>
             <p style="color:white;">
                 Current Latitude & Longitude: <span id="lat"></span> , <span id="lng"></span>
             </p>
             <br>
-
+           
         </div>
     </header>
 
     <!-- Map -->
     <section id="contact" class="map">
-
-
-        <div id="map"></div>
-
-
+        
+        
+            <div id="map"></div>
+        
+        
     </section>
-    <!-- Call to Action -->
+     <!-- Call to Action -->
     <aside class="call-to-action" style="background-color:#000000; color:white;">
         <div class="container">
             <div class="row">
@@ -86,50 +75,41 @@
             </div>
         </div>
     </aside>
-
-
-
+    
+    
+    
     <hr style="border-color:#337ab7; border-width: 25px; margin: 0px;">
     <!-- About Service -->
-
-
+    
+    
     <section id="serviceInfo" style="background-color:#000000; color:white;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <br>
-                    <br>
-                    <br>
+                    <br><br><br>
                     <h1>The Uber Extra Service</h1>
                     <p>Uber Extra is a service leverage Uber API to help costumers make educated decisions so that they can effiently use their time and money.</p>
                 </div>
             </div>
             <!-- /.row -->
         </div>
-        <br>
-        <br>
-        <br>
+        <br><br><br>
         <!-- /.container -->
     </section>
     <hr class="none" style="border-color:#337ab7; border-width: 25px; margin: 0px;">
-    <!-- About Us-->
+     <!-- About Us-->
     <section id="about" class="call-to-action" style="background-color:#000000; color:white;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-
+                    
                     <h1>Five guys failing at SSH keys(well atleast Kyle...) and Git</h1>
                     <dl>
-                        <dt>Kyle Kiple</dt>
-                        <dl>Info about Kyle + Picture</dl> <img class="img-portfolio img-responsive" src="img/#.jpg">
-                        <dt>John Teel</dt>
-                        <dl>Info about John + Picture</dl> <img class="img-portfolio img-responsive" src="img/#.jpg">
-                        <dt>Clinton Beasley</dt>
-                        <dl>Info Clinton Kyle + Picture</dl> <img class="img-portfolio img-responsive" src="img/#.jpg">
-                        <dt>Chaitanya Varanasi</dt>
-                        <dl>Info about Chai + Picture</dl> <img class="img-portfolio img-responsive" src="img/#.jpg">
-                        <dt>Frank Alvarado</dt>
-                        <dl>Info about Frank + Picture</dl> <img class="img-portfolio img-responsive" src="img/#.jpg">
+                        <dt>Kyle Kiple</dt><dl>Info about Kyle + Picture</dl> <img class="img-portfolio img-responsive" src="img/#.jpg">
+                        <dt>John Teel</dt><dl>Info about John + Picture</dl> <img class="img-portfolio img-responsive" src="img/#.jpg">
+                        <dt>Clinton Beasley</dt><dl>Info Clinton Kyle + Picture</dl> <img class="img-portfolio img-responsive" src="img/#.jpg">
+                        <dt>Chaitanya Varanasi</dt><dl>Info about Chai + Picture</dl> <img class="img-portfolio img-responsive" src="img/#.jpg">
+                        <dt>Frank Alvarado</dt><dl>Info about Frank + Picture</dl> <img class="img-portfolio img-responsive" src="img/#.jpg">
                     </dl>
                 </div>
             </div>
@@ -137,7 +117,7 @@
         </div>
         <!-- /.container -->
     </section>
-
+     
     <hr style="border-color:#337ab7; border-width: 25px; margin: 0px;">
     <!-- Footer -->
     <footer style="background-color:#000000; color:white;">
@@ -146,11 +126,10 @@
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h4><strong>Uber Extra</strong>
                     </h4>
-                    <p>100 Park Place
-                        <br>Nome, AK 99762</p>
+                    <p>100 Park Place<br>Nome, AK 99762</p>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:HIVE_Mind@service.com">HIVE_Mind@service.com</a>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:HIVE_Mind@service.com">HIVE_Mind@service.com</a>
                         </li>
                     </ul>
                     <br>
@@ -180,108 +159,99 @@
 
     <!-- Custom Theme JavaScript -->
     <script>
-        // Closes the sidebar menu
-        $("#menu-close").click(function(e) {
-            e.preventDefault();
-            $("#sidebar-wrapper").toggleClass("active");
-        });
-        // Opens the sidebar menu
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sidebar-wrapper").toggleClass("active");
-        });
-        // Scrolls to the selected menu item on the page
-        $(function() {
-            $('a[href*=#]:not([href=#])').click(function() {
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                    if (target.length) {
-                        $('html,body').animate({
-                            scrollTop: target.offset().top
-                        }, 1000);
-                        return false;
-                    }
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
                 }
-            });
+            }
         });
+    });
     </script>
     <script>
-        $.ajax({
+          $.ajax({
             type: "POST",
             url: "/coordinates",
-            data: {
-                "latitude": pos.lat,
-                "longitude": pos.lng
-            }
-        }).done(function(o) {
+            data: { "latitude": pos.lat, "longitude": pos.lng}
+            }).done(function( o ) {
             console.log("success")
-        });
+          });
     </script>
     <script>
-        function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: {
-                    lat: -34.397,
-                    lng: 150.644
-                },
-                zoom: 6
-            });
-            var infoWindow = new google.maps.InfoWindow({
-                map: map
-            });
-            // Try HTML5 geolocation.
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    var pos = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude
-                    };
-                    var test = 50;
-                    var test2 = test + 45;
-                    document.getElementById("lat").innerHTML = pos.lat;
-                    document.getElementById("lng").innerHTML = pos.lng;
-                    infoWindow.setPosition(pos);
-                    infoWindow.setContent('Location found.');
-                    map.setCenter(pos);
-                }, function() {
-                    handleLocationError(true, infoWindow, map.getCenter());
-                });
-            } else {
-                // Browser doesn't support Geolocation
-                handleLocationError(false, infoWindow, map.getCenter());
-            }
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 6
+        });
+        var infoWindow = new google.maps.InfoWindow({map: map});
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            var test = 50;
+            var test2 = test + 45;
+            document.getElementById("lat").innerHTML = pos.lat;
+            document.getElementById("lng").innerHTML = pos.lng;
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            map.setCenter(pos);
+        }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+        });
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
         }
-
-        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-                infoWindow.setPosition(pos);
-                infoWindow.setContent(browserHasGeolocation ?
-                    'Error: The Geolocation service failed.' :
-                    'Error: Your browser doesn\'t support geolocation.');
-            }
-            //method for searchBox autocomplete
-        var defaultBounds = new google.maps.LatLngBounds(
-            new google.maps.LatLng(-33.8902, 151.1759),
-            new google.maps.LatLng(-33.8474, 151.2631));
+    }
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                'Error: The Geolocation service failed.' :
+                'Error: Your browser doesn\'t support geolocation.');
+    }
+    //method for searchBox autocomplete
+    var defaultBounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(-33.8902, 151.1759),
+        new google.maps.LatLng(-33.8474, 151.2631));
         var input = document.getElementById('searchTextField');
         var searchBox = new google.maps.places.SearchBox(input, {
             bounds: defaultBounds
-        });
+    });
     </script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ0oEIUqBrChwFAk8q4BDsTWltlzM3TDA&libraries=places"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ0oEIUqBrChwFAk8q4BDsTWltlzM3TDA&signed_in=true&callback=initMap" async defer></script>
     <script>
-        function uberLogin() {
+        function uberLogin(){
             var clientId = "HVXgAbDzXyvreW-pctRCHtrvXbYieGD5";
             var redirect = "http://localhost:7000/submit";
             var responseType = "text";
-
+            
             $.ajax({
                 type: "GET",
                 url: "https://login.uber.com/oauth/v2/authorize?client_id=" + clientId + "&response_type=" + responseType,
                 dataType: "jsonp",
                 crossDomain: true
-            }).done(function(response) {
+            }).done(function(response){
                 console.log("response");
             });
         }
