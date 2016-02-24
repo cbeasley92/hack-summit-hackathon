@@ -9,13 +9,12 @@ from flask_sslify import SSLify
 from rauth import OAuth2Service
 import requests
 
-'''
 from OpenSSL import SSL
 
 context = SSL.Context(SSL.SSLv23_METHOD)
 context.use_privatekey_file('key.pem')
 context.use_certificate_file('cert.pem')
-'''
+
 
 app = Flask(__name__, static_folder='static', static_url_path='')
 app.requests_session = requests.Session()
